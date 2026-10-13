@@ -1,0 +1,12 @@
+@model Category
+@{
+    ViewData["Title"] = "Изтриване";
+}
+<h1>Изтриване на категория</h1>
+<p>Сигурни ли сте, че искате да изтриете <strong>@Model.Name</strong>?</p>
+<div asp-validation-summary="All" class="text-danger"></div>
+<form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Изтрий</button>
+</form>
+<a asp-action="Index">Отказ</a>

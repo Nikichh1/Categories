@@ -1,0 +1,16 @@
+@model Category
+@{
+    ViewData["Title"] = "Добавяне на категория";
+}
+<h1>Добавяне на категория</h1>
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <label asp-for="Name">Име</label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+    <label asp-for="DisplayOrder">Ред на показване</label>
+    <input asp-for="DisplayOrder" type="number" />
+    <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+    <div><button type="submit">Запази</button></div>
+</form>
+<a asp-action="Index">Назад</a>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Categories</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="container navigation">
+            <a asp-controller="Home" asp-action="Index" class="brand">Categories</a>
+            <a asp-controller="Home" asp-action="Index">Начало</a>
+            <a asp-controller="Categories" asp-action="Index">Категории</a>
+            <a asp-controller="Product" asp-action="Index">Продукти</a>
+        </nav>
+    </header>
+    <main class="container">
+        @RenderBody()
+    </main>
+    <footer class="container">
+        <p>Categories - ASP.NET Core MVC</p>
+    </footer>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

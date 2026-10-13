@@ -1,0 +1,17 @@
+@model Product
+@{
+    ViewData["Title"] = "Редакция на продукт";
+}
+<h1>Редакция на продукт</h1>
+<form asp-action="Edit" asp-route-id="@Model.Id" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <label asp-for="Name">Име</label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+    <label asp-for="IdCategory">Категория</label>
+    <select asp-for="IdCategory" asp-items="ViewBag.Categories"></select>
+    <span asp-validation-for="IdCategory" class="text-danger"></span>
+    <div><button type="submit">Запази</button></div>
+</form>
+<a asp-action="Index">Назад</a>

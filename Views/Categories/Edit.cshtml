@@ -1,0 +1,16 @@
+@model Category
+@{
+    ViewData["Title"] = "Редакция на категория";
+}
+<h1>Редакция на категория</h1>
+<form asp-action="Edit" asp-route-id="@Model.Id" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <label asp-for="Name">Име</label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+    <label asp-for="DisplayOrder">Ред на показване</label>
+    <input asp-for="DisplayOrder" type="number" />
+    <div><button type="submit">Запази</button></div>
+</form>
+<a asp-action="Index">Назад</a>

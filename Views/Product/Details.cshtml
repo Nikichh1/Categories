@@ -1,0 +1,9 @@
+@model Product
+@{
+    ViewData["Title"] = "Детайли за продукт";
+}
+<h1>@Model.Name</h1>
+<p>Номер: @Model.Id</p>
+<p>Категория: @Model.Category?.Name</p>
+<a asp-action="Edit" asp-route-id="@Model.Id">Редакция</a> |
+<a asp-action="Index">Назад</a>

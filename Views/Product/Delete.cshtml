@@ -1,0 +1,11 @@
+@model Product
+@{
+    ViewData["Title"] = "Изтриване на продукт";
+}
+<h1>Изтриване на продукт</h1>
+<p>Сигурни ли сте, че искате да изтриете <strong>@Model.Name</strong>?</p>
+<form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Изтрий</button>
+</form>
+<a asp-action="Index">Отказ</a>
